@@ -1,17 +1,13 @@
-#webserver: webserver.c libuv/uv.a http_parser/http_parser.o
-#	gcc -o webserver webserver.c libuv/uv.a http_parser/http_parser.o
-webserver: webserver.c http-parser/http_parser.o
-	gcc -o webserver webserver.c http-parser/http_parser.o
-#webserver: webserver.c
-#	gcc -o webserver webserver.c
+webserver: webserver.c uv/uv.a http-parser/http_parser.o
+	gcc -o webserver webserver.c uv/uv.a http-parser/http_parser.o
 
-#libuv/uv.a:
-#	make -C libuv
+uv/uv.a:
+	make -C uv
 
 http-parser/http_parser.o:
 	make -C http-parser http_parser.o
 
 clean:
 	make -C http-parser clean
-#	make -C libuv distclean
+	make -C uv distclean
 	rm webserver

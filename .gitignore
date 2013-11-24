@@ -16,3 +16,6 @@
 *.exe
 *.out
 *.app
+
+# exclude the old “libuv” residing in folder “uv”
+uv/

@@ -23,4 +23,16 @@ git submodule add https://github.com/joyent/libuv.git libuv
 Include "joyent/http-parser":
 git submodule add https://github.com/joyent/http-parser.git
 
+Compiling "libuv"
+=================
+
+First install GYP
+cd libuv
+mkdir -p build
+git clone https://git.chromium.org/external/gyp.git build/gyp
+
+./gyp_uv.py -f xcode
+xcodebuild -project uv.xcodeproj -configuration Release -target All
+
+
 
