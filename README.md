@@ -13,3 +13,14 @@ Help on Git
 
 Just find some help on using Git in http://git-scm.com/book/en
 
+
+Including all used submodules
+-----------------------------
+
+Include "joyent/libuv":
+git submodule add https://github.com/joyent/libuv.git libuv
+
+Include "joyent/http-parser":
+git submodule add https://github.com/joyent/http-parser.git
+
+
